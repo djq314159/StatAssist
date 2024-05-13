@@ -1,3 +1,6 @@
+from stats import statistics
+
+
 class ALGORITHMS:
     @staticmethod
     def linear_regression(data: list) -> (float, float):
@@ -6,14 +9,14 @@ class ALGORITHMS:
         :param data: list, [x_data, y_data]
         :return: (float, float), slope / y-intercept
         """
-        averages = MATH.STATS.get_mean(data[0], data[1])
-        variances = MATH.STATS.get_variance([data[0], data[1]], averages)
+        averages = statistics.get_mean(data[0], data[1])
+        variances = statistics.get_variance([data[0], data[1]], averages)
 
-        covariance_xy = MATH.STATS.get_covariance([data[0], data[1]], averages)
-        correlation = MATH.STATS.get_correlation_coefficient(covariance_xy, variances[0], variances[1])
+        covariance_xy = statistics.get_covariance([data[0], data[1]], averages)
+        correlation = statistics.get_correlation_coefficient(covariance_xy, variances[0], variances[1])
 
-        m = MATH.STATS.get_linreg_slope(correlation, variances[0], variances[1])
-        b = MATH.STATS.ml_linreg_1([data[0], data[1]], slope=m)
+        m = statistics.get_linreg_slope(correlation, variances[0], variances[1])
+        b = statistics.ml_linreg_1([data[0], data[1]], slope=m)
 
         return m, b
 
@@ -33,8 +36,8 @@ class ALGORITHMS:
             for j in range(n_cols):
                 if i != j:
                     cov = 0
-                    means = MATH.STATS.get_mean(data[i], data[j])
-                    variances = MATH.STATS.get_variance(data, means)
+                    means = statistics.get_mean(data[i], data[j])
+                    variances = statistics.get_variance(data, means)
 
                     for k in range(n):
                         cov += (data[i][k] - means[0])*(data[j][k] - means[1])/n
@@ -46,23 +49,23 @@ class ALGORITHMS:
 
         return matrix
 
-        @staticmethod
-        def integral(func, func_args: list, interval: list) -> float:
-            """
-            Returns the area under a defined continuous function on an interval.
-            :param func: callable function with x as first param.
-            :param func_args: list, arguments for callable function.
-            :param interval: interval on which the geometric area is to be calculated.
-            :return: float
-            """
-            dx = 0.0001
-            area = 0
-            x = interval[0]
-            while x < interval[1]:
-                area += func(x, func_args)*dx
-                x += dx
+    @staticmethod
+    def integral(func, func_args: list, interval: list) -> float:
+        """
+        Returns the area under a defined continuous function on an interval.
+        :param func: callable function with x as first param.
+        :param func_args: list, arguments for callable function.
+        :param interval: interval on which the geometric area is to be calculated.
+        :return: float
+        """
+        dx = 0.0001
+        area = 0
+        x = interval[0]
+        while x < interval[1]:
+            area += func(x, func_args) * dx
+            x += dx
 
-            return area
+        return area
 
 
 algorithms = ALGORITHMS()
