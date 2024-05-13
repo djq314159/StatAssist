@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="StatAssist",
-    version="0.0.1",
+    version="1.0.0",
     license='MIT',
     author="Damion J. Quintanilla",
     author_email="djq314159@gmail.com",
