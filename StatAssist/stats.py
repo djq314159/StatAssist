@@ -1,4 +1,10 @@
-import algorithms
+import random
+import math
+from sklearn.mixture import GaussianMixture
+import torch
+import torch.nn as nn
+import pandas as pd
+from utils import algorithms
 
 
 class STATS:
@@ -279,3 +285,6 @@ class STATS:
             epoch += 1
 
         return m.item()
+
+
+statistics = STATS()
