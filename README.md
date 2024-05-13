@@ -16,6 +16,8 @@ Example 1:
 import StatAssist
 import matplotlib.pyplot as plt
 
+stat = StatAssist.MATH.STAT
+
 # Define data
 x_data = [0, 1, 2, 3, 4, 5]
 y_data = [0, 2, 4, 6, 8, 10]
