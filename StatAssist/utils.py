@@ -67,5 +67,51 @@ class ALGORITHMS:
 
         return area
 
+    @staticmethod
+    def vector_add(vector_1: list, vector_2: list, add: bool = True) -> list:
+        """
+        Returns the sum or difference between two vectors.
+        :param vector_1: list
+        :param vector_2: list
+        :param add: bool, Default: True
+        :return: list
+        """
+        new_vector = []
+        for element_x, element_y in vector_1, vector_2:
+            if add:
+                new_vector.append(element_x + element_y)
+            if not add:
+                new_vector.append(element_x - element_y)
+
+        return new_vector
+
+    @staticmethod
+    def vector_dot(vector_1: list, vector_2: list) -> float:
+        """
+        Returns the dot product between two vectors.
+        :param vector_1: list
+        :param vector_2: list
+        :return: float
+        """
+        dot_sum = 0
+        for element_x, element_y in vector_1, vector_2:
+            dot_sum += element_x * element_y
+
+        return dot_sum
+
+    @staticmethod
+    def vector_cross(vector_1: list, vector_2: list) -> list:
+        """
+        Returns the cross product between two 3-dimensional vectors.
+        :param vector_1: list
+        :param vector_2: list
+        :return: list
+        """
+        a = vector_1[1] * vector_2[2] - vector_1[2] * vector_2[1]
+        b = vector_1[0] * vector_2[2] - vector_1[2] * vector_2[0]
+        c = vector_1[0] * vector_2[1] - vector_1[1] * vector_2[0]
+
+        return [a, b, c]
+
 
 algorithms = ALGORITHMS()
