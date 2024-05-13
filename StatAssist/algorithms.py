@@ -46,5 +46,23 @@ class ALGORITHMS:
 
         return matrix
 
+        @staticmethod
+        def integral(func, func_args: list, interval: list) -> float:
+            """
+            Returns the area under a defined continuous function on an interval.
+            :param func: callable function with x as first param.
+            :param func_args: list, arguments for callable function.
+            :param interval: interval on which the geometric area is to be calculated.
+            :return: float
+            """
+            dx = 0.0001
+            area = 0
+            x = interval[0]
+            while x < interval[1]:
+                area += func(x, func_args)*dx
+                x += dx
+
+            return area
+
 
 algorithms = ALGORITHMS()
