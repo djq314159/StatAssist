@@ -27,6 +27,7 @@ variances = stats.get_variance([x_data, y_data], averages)
 covariance_xy = stats.get_covariance([x_data, y_data], averages)
 correlation = stats.get_correlation_coefficient(covariance_xy, variances[0], variances[1])
 
+# Get linear regression parameters
 m = self.get_linreg_slope(correlation, variances[0], variances[1])
 b = self.ml_linreg_1([self.x_data, self.y_data], slope=m)
 
