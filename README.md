@@ -13,10 +13,8 @@ pip install StatAssist
 Example 1:
 
 ```python
-import StatAssist
+from StatAssist import stats
 import matplotlib.pyplot as plt
-
-stat = StatAssist.MATH.STAT
 
 # Define data
 x_data = [0, 1, 2, 3, 4, 5]
@@ -45,10 +43,10 @@ Example 2:
 
 ```python
 
-import StatAssist
+from StatAssist import algorithms
 import matplotlib.pyplot as plt
 
-lin_reg = algorithm.linear_regression
+lin_reg = algorithms.linear_regression
 
 # Define data
 x_data = [0, 1, 2, 3, 4, 5]
