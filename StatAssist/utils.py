@@ -67,6 +67,8 @@ class ALGORITHMS:
 
         return area
 
+
+class MATH:
     @staticmethod
     def vector_add(vector_1: list, vector_2: list, add: bool = True) -> list:
         """
@@ -114,4 +116,4 @@ class ALGORITHMS:
         return [a, b, c]
 
 
-algorithms = ALGORITHMS()
+algorithms, vector = ALGORITHMS(), MATH()
